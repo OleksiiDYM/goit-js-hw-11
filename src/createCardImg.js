@@ -27,5 +27,4 @@ function createCardImg(imgArr) {
     </div>`
     )
     .join('');
-  galleryList.insertAdjacentHTML('beforeend');
 }
