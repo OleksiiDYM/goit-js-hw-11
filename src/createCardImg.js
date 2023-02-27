@@ -1,10 +1,9 @@
 export { createCardImg };
 const galleryList = document.querySelector('.gallery');
 function createCardImg(imgArr) {
-  galleryList.innerHTML = imgArr
-    .map(
-      img =>
-        `<div class="photo-card">
+  const card = imgArr.map(
+    img =>
+      `<div class="photo-card">
         <div class="info">
         <a href="${img.largeImageURL}" alt="${img.tags}" >
           <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy" class="photo-img" />
@@ -25,6 +24,6 @@ function createCardImg(imgArr) {
         </div>
         </div>
     </div>`
-    )
-    .join('');
+  );
+  galleryList.insertAdjacentHTML('beforeend', card);
 }
