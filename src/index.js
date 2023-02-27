@@ -32,8 +32,9 @@ async function onSearch(event) {
 
   try {
     const serchResponse = await fetchSearchImage(page, searchQuery);
-
-    Notify.info(`Hooray! We found ${serchResponse.totalHits} images.`);
+    if (serchResponse.totalHits !== 0) {
+      Notify.info(`Hooray! We found ${serchResponse.totalHits} images.`);
+    }
 
     if (serchResponse.totalHits === 0) {
       Notify.warning(
